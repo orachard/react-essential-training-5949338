@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import chef from "./images/chef.jpg";
 
@@ -49,9 +50,13 @@ function Main({ dishes }) {
 }
 
 function App() {
+  const [firstVar, secondVar] = useState("Open");
+  console.log(firstVar);
   return (
     <div>
       <Header name="Alex" year={new Date().getFullYear()} />
+      <h2>We are { firstVar }!!</h2>
+      <button onClick={() => (secondVar("Closed"))}>Close Restaurant</button>
       <Main dishes={dishObjects} />
     </div>
   );
